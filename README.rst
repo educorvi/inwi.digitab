@@ -6,7 +6,10 @@
 inwi.digitab
 ============
 
-Tell me what your product does
+Mit diesem Add-On für das Open-Source CMS Plone sollen Autoren des Intranet-Wissensmanagements "INWI" in die Lage versetzt werden,
+selbständig Verarbeitungsregeln für eingehende elektronische Dokumente zu konfigurieren. Die Texte des INWI sind aktuell nur
+von Menschen lesbar. Demensprechend können die darin beschriebenen Verarbeitungsregeln auch nur von Menschen interpretiert und
+ausgeführt werden. Mit diesem Add-On soll es ermöglicht werden, dass die Verarbeitungsregeln auch maschinenlesbar werden. 
 
 Features
 --------

@@ -1,5 +1,6 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
+    xmlns:grok="http://namespaces.zope.org/grok"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:plone="http://namespaces.plone.org/plone"
@@ -12,6 +13,9 @@
     Better import explicite packages or configurations ;)
   -->
   <!--<includeDependencies package="." />-->
+
+  <include package="five.grok" />
+  <grok:grok package="." />
 
   <include package=".browser" />
 
@@ -43,5 +47,14 @@
       />
 
   <!-- -*- extra stuff goes here -*- -->
+
+  <include package="plone.behavior" file="meta.zcml" />
+
+  <plone:behavior
+      title="INWI-Digitab"
+      description="Konfiguration von Verarbeitungsregeln fuer eDokumente mit dem CMS"
+      provides=".behaviors.IRulesTable"
+      for="plone.dexterity.interfaces.IDexterityContent"
+      />
 
 </configure>
