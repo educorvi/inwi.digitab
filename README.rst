@@ -7,41 +7,40 @@ inwi.digitab
 ============
 
 Mit diesem Add-On für das Open-Source CMS Plone sollen Autoren des Intranet-Wissensmanagements "INWI" in die Lage versetzt werden,
-selbständig Verarbeitungsregeln für eingehende elektronische Dokumente zu konfigurieren. Die Texte des INWI sind aktuell nur
+selbständig Verarbeitungsregeln für Datensätze, elektronische Dokumente, o.ä. zu konfigurieren. Die Texte des INWI sind aktuell nur
 von Menschen lesbar. Demensprechend können die darin beschriebenen Verarbeitungsregeln auch nur von Menschen interpretiert und
 ausgeführt werden. Mit diesem Add-On soll es ermöglicht werden, dass die Verarbeitungsregeln auch maschinenlesbar werden. 
 
 Features
 --------
 
-- Can be bullet points
+- Behavior (Tab INWI-Digitab) für alle Artikeltypen in Plone, die auf Dexterity basieren
+- Parameterauswahl anhand der DALE-XML-Struktur
+- Vocabularies für Parameter, Operanden und Aktionen
+- Prototyphafte Umsetzung einer Dokumentverarbeitung
 
 
-Examples
---------
+Beispiele
+---------
 
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
+- Aktuell sind noch keine Beispiele verfügbar.
 
 
-Documentation
+Dokumentation
 -------------
 
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
+Eine deutsche Konzeptbeschreibung ist im docs-Ordner verfügbar.
 
+Übersetzungen
+-------------
 
-Translations
-------------
-
-This product has been translated into
-
-- Klingon (thanks, K'Plai)
+- Das Add-On ist aktuell nur in Deutsch verfügbar. Weitere Übersetzungen sind nicht geplant.
 
 
 Installation
 ------------
 
-Install inwi.digitab by adding it to your buildout::
+Installieren Sie INWI-Digitab durch Hinzufügen des Add-Ons zur buildout.cfg::
 
     [buildout]
 
@@ -51,25 +50,23 @@ Install inwi.digitab by adding it to your buildout::
         inwi.digitab
 
 
-and then running ``bin/buildout``
+danach starten Sie: ``bin/buildout``
 
 
 Contribute
 ----------
 
-- Issue Tracker: https://github.com/collective/inwi.digitab/issues
-- Source Code: https://github.com/collective/inwi.digitab
-- Documentation: https://docs.plone.org/foo/bar
+- Issue Tracker: https://github.com/educorvi/inwi.digitab/issues
+- Source Code: https://github.com/educorvi/inwi.digitab
 
 
 Support
 -------
 
-If you are having issues, please let us know.
-We have a mailing list located at: project@example.com
+Für selbständige Tests unseres Prototyps und dabei auftretende Fehler: walther.educorvi@gmail.com
 
 
 License
 -------
 
-The project is licensed under the GPLv2.
+GPLv2.
