@@ -79,6 +79,8 @@ getOperanden = SimpleVocabulary([
     SimpleTerm(value=u">", token=u">", title=u"> größer als"),
     SimpleTerm(value=u"==", token=u"==", title="== (gleich)"),
     SimpleTerm(value=u"!=", token=u"!=", title="!= (ungleich)"),
+    SimpleTerm(value=u"match", token=u"match", title="in CUSA"),
+    SimpleTerm(value=u"no_match", token=u"no_match", title="nicht in CUSA"),
     ])
 
 
@@ -87,16 +89,10 @@ getComparer = SimpleVocabulary([
     SimpleTerm(value=u">", token=u">", title=u"> (größer als)"),
     SimpleTerm(value=u"==", token=u"==", title="== (gleich)"),
     SimpleTerm(value=u"!=", token=u"!=", title="!= (ungleich)"),
-    SimpleTerm(value=u"startswith", token=u"startswith", title=u"beginnt mit:"),
-    SimpleTerm(value=u"endswith", token=u"enswith", title=u"endet mit:"),
-    SimpleTerm(value=u"in", token=u"in", title=u"enthalten in:"),
     ])
-
 
 def possibleActions(context):
     terms = []
-    terms.append(SimpleVocabulary.createTerm(u'and', u'and', u'UND'))
-    terms.append(SimpleVocabulary.createTerm(u'or', u'or', u'ODER'))
     brains = ploneapi.content.find(portal_type="Stammblatt")
     if brains:
         for i in brains:
@@ -104,3 +100,9 @@ def possibleActions(context):
     return SimpleVocabulary(terms)
 directlyProvides(possibleActions, IContextSourceBinder)
 
+
+possibleLinks = SimpleVocabulary([
+    SimpleTerm(value=u'keine', token=u'keine', title=u'Keine'),
+    SimpleTerm(value=u'and', token=u'and', title=u'UND'),
+    SimpleTerm(value=u'or', token=u'or', title=u'ODER'),
+    ])

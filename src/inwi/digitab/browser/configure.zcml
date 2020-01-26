@@ -18,4 +18,11 @@
       directory="static"
       />
 
+  <browser:page
+      name="test-view"
+      for="*"
+      class=".views.TestView"
+      permission="zope2.View"
+      />
+
 </configure>
