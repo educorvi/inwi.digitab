@@ -9,30 +9,30 @@ from zope.interface import provider
 from zope.interface import Invalid
 from collective.z3cform.datagridfield import DataGridFieldFactory
 from collective.z3cform.datagridfield import DictRow
-from inwi.digitab.vocabularies import possibleParams, getOperanden, getComparer, possibleActions, possibleLinks
+from inwi.digitab.vocabularies import possibleParams, getOperanden, getComparer, possibleActions, possibleLinks, possibleCustomer
 from inwi.digitab.vocab_dale import dale, dokumentarten
 
 class IRule(model.Schema):
     """Felder einer Verarbeitungsregel"""
 
-    var1 = schema.Choice(title=u"Variable-1",
+    rel = schema.Choice(title=u"Relation",
                            source=dale,
                            required=True)
 
-    operand = schema.Choice(title=u"Operand",
+    ind1 = schema.Choice(title=u"Operand",
                            source=getOperanden,
                            required=False)
     
-    var2 = schema.Choice(title=u"Variable-2",
+    var = schema.Choice(title=u"Variable-2",
                           source=dale,
                           required=False)
 
-    vergleich = schema.Choice(title=u"Vergleich",
+    ind2 = schema.Choice(title=u"Vergleich",
                           source=getComparer,
                           required=False)
 
-    ergebnis = schema.Int(title=u"Ergebnis",
-                          description="(ganze Zahl)",
+    ind3 = schema.TextLine(title=u"Ergebnis",
+                          description="Zahl oder Text",
                           required=False)
 
     link = schema.Choice(title=u"Verknüpfung",
@@ -62,18 +62,24 @@ class IRulesTable(model.Schema):
     model.fieldset(
             'inwidigitab',
             label=u'INWI-Digitab',
-            fields=('aktion', 'dokumentart', 'rulestable',),
+            fields=('aktion', 'kundengruppe', 'dokumentart', 'rulestable',),
         )
 
     aktion = schema.Choice(title=u"Auswahl des Prozesses / der Aktion",
                            description=u'Welcher Prozess oder welche Aktion wird angestossen, wenn die Regel im Ergebnis "wahr" liefert?',
-                           required=False,
+                           required=True,
                            source=possibleActions,
+    )
+
+    kundengruppe = schema.Choice(title=u"Auswahl der Kundengruppe",
+                          description=u'Für welche Kundengruppe soll die Regel angewendet werden?',
+                          required=True,
+                          source=possibleCustomer,
     )
 
     dokumentart = schema.Choice(title=u"Auswahl Dokumentart",
                            description=u"Für welche Dokumentart wird die folgende Regel aufgestellt?",
-                           required=False,
+                           required=True,
                            source=dokumentarten,
     )
 

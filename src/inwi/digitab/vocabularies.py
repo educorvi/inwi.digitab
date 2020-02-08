@@ -87,8 +87,10 @@ getOperanden = SimpleVocabulary([
 getComparer = SimpleVocabulary([
     SimpleTerm(value=u"<", token=u"<", title=u"< (kleiner als)"),
     SimpleTerm(value=u">", token=u">", title=u"> (größer als)"),
-    SimpleTerm(value=u"==", token=u"==", title="== (gleich)"),
-    SimpleTerm(value=u"!=", token=u"!=", title="!= (ungleich)"),
+    SimpleTerm(value=u"==", token=u"==", title=u"== (gleich)"),
+    SimpleTerm(value=u"!=", token=u"!=", title=u"!= (ungleich)"),
+    SimpleTerm(value=u"in", token=u"in", title=u"enthält"),
+    SimpleTerm(value=u"not in", token=u"not in", title=u"enthält nicht"),
     ])
 
 def possibleActions(context):
@@ -106,3 +108,10 @@ possibleLinks = SimpleVocabulary([
     SimpleTerm(value=u'and', token=u'and', title=u'UND'),
     SimpleTerm(value=u'or', token=u'or', title=u'ODER'),
     ])
+
+possibleCustomer = SimpleVocabulary([
+    SimpleTerm(value=u'Versicherte', token=u'Versicherte', title=u'Versicherte'),
+    SimpleTerm(value=u'Mitgliedsbetriebe', token=u'Mitgliedsbetriebe', title=u'Mitgliedsbetriebe und Einrichtungen'),
+    SimpleTerm(value=u'SiFA', token=u'SiFA', title=u'SiFA'),
+    ])
+
