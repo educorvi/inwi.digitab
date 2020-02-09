@@ -73,12 +73,12 @@ getOperanden = SimpleVocabulary([
     SimpleTerm(value='false', token='false', title="nein (falsch)"),
     SimpleTerm(value=u"m", token=u"m", title=u"männlich"),
     SimpleTerm(value=u"w", token=u"w", title=u"weiblich"),
-    SimpleTerm(value=u"+", token=u"+", title=u"+ (Plus)"),
-    SimpleTerm(value=u"-", token=u"-", title=u"- (Minus)"),
-    SimpleTerm(value=u"<", token=u"<", title=u"< kleiner als"),
-    SimpleTerm(value=u">", token=u">", title=u"> größer als"),
-    SimpleTerm(value=u"==", token=u"==", title="== (gleich)"),
-    SimpleTerm(value=u"!=", token=u"!=", title="!= (ungleich)"),
+    SimpleTerm(value=u"+", token=u"+", title=u"[+] plus"),
+    SimpleTerm(value=u"-", token=u"-", title=u"[-] minus"),
+    SimpleTerm(value=u"<", token=u"<", title=u"[<] kleiner"),
+    SimpleTerm(value=u">", token=u">", title=u"[>] größer"),
+    SimpleTerm(value=u"==", token=u"==", title="[==] (gleich)"),
+    SimpleTerm(value=u"!=", token=u"!=", title="[!=] (ungleich)"),
     SimpleTerm(value=u"match", token=u"match", title="in CUSA"),
     SimpleTerm(value=u"no_match", token=u"no_match", title="nicht in CUSA"),
     ])
@@ -105,8 +105,8 @@ directlyProvides(possibleActions, IContextSourceBinder)
 
 possibleLinks = SimpleVocabulary([
     SimpleTerm(value=u'keine', token=u'keine', title=u'Keine'),
-    SimpleTerm(value=u'and', token=u'and', title=u'UND'),
-    SimpleTerm(value=u'or', token=u'or', title=u'ODER'),
+    SimpleTerm(value=u'AND', token=u'AND', title=u'UND'),
+    SimpleTerm(value=u'OR', token=u'OR', title=u'ODER'),
     ])
 
 possibleCustomer = SimpleVocabulary([

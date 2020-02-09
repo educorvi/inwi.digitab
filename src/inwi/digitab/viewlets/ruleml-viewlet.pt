@@ -1,3 +1,38 @@
-<div class="days_to_conf">
-    ${view/message}
+<div class="col-12">
+
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseRuleml" aria-expanded="false" 
+          aria-controls="collapseRuleml">
+          Verarbeitungsregel in RuleML
+  </button>
+
+  <div class="collapse" id="collapseRuleml">
+
+  <h2>Maschinenlesbare Verarbeitungsregel (RuleML)</h2>
+
+  <pre>
+    <code lang="xml">
+      &lt;Implies&gt;
+        &lt;head&gt;
+          &lt;Atom&gt;
+            &lt;Rel&gt;<span tal:replace="view/get_aktion"/>&lt;/Rel&gt;
+            &lt;Var&gt;<span tal:replace="context/kundengruppe"/>&lt;/Var&gt;
+            &lt;Ind&gt;<span tal:replace="context/dokumentart"/>&lt;/Ind&gt;
+          &lt;/Atom&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+          <span tal:condition="python: len(context.rulestable) > 1">&lt;<span tal:replace="python:context.rulestable[0]['link']"/>&gt;
+            <span tal:repeat="rule context/rulestable">&lt;Atom&gt;
+              &lt;Rel&gt;<span tal:replace="python: view.get_dale(rule['rel'])"/>&lt;/Rel&gt;
+              &lt;Ind&gt;<span tal:replace="python: view.get_operand(rule['ind1'])"/>&lt;/Ind&gt;
+              <span tal:condition="rule/var">&lt;Var&gt;<span tal:replace="python: view.get_dale(rule['var'])"/>&lt;/Var&gt;</span>
+              <span tal:condition="rule/ind2">&lt;Ind&gt;<span tal:replace="rule/ind2"/>&lt;/Ind&gt;</span>
+              <span tal:condition="rule/ind3">&lt;Ind&gt;<span tal:replace="rule/ind3"/>&lt;/Ind&gt;</span>
+            &lt;/Atom&gt;</span>
+          &lt;/<span tal:replace="python:context.rulestable[0]['link']"/>&gt;</span>
+        &lt;/body&gt;
+      &lt;/Implies&gt;
+    </code>
+  </pre>
+
+  </div>
 </div>
