@@ -15,9 +15,10 @@ class RuleMLViewlet(ViewletBase):
         newtable = []
         if hasattr(self.context, 'rulestable'):
             rulestable = self.context.rulestable
-            for i in rulestable:
-                if i.get('rel'):
-                    newtable.append(i)
+            if rulestable:
+                for i in rulestable:
+                    if i.get('rel'):
+                        newtable.append(i)
         self.context.rulestable = newtable
 
     def get_aktion(self):
