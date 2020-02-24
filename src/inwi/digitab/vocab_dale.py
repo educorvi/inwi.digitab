@@ -10,8 +10,8 @@ dokumentarten = SimpleVocabulary(
         SimpleTerm(value=u'e-rechnung', token=u'e-rechnung', title=u'E-Rechnung'),
    ]) 
 
-dale = SimpleVocabulary(
-    [
+daleListe = [
+        SimpleTerm(value=u'', token=u'', title=u''),
         SimpleTerm(value=u'heute', token=u'heute', title=u'heute'),
         SimpleTerm(value=u'vin_1', token=u'vin_1', title=u'Nachname d. Versicherten [vin_1]'),
         SimpleTerm(value=u'vin_2', token=u'vin_2', title=u'Vorname d. Versicherten [vin_2]'),
@@ -121,4 +121,6 @@ dale = SimpleVocabulary(
         SimpleTerm(value=u'swh_2', token=u'swh_2', title=u'Name des SW-Moduls [swh_2]'),
         SimpleTerm(value=u'swi_1', token=u'swi_1', title=u'Felderkennung [swh_1]'),
         SimpleTerm(value=u'swi_2', token=u'swi_2', title=u'Feldinhalt [swh_2]')
-        ])
+        ]
+sortedList = sorted(daleListe, key=lambda x: x.title, reverse=False)
+dale = SimpleVocabulary(sortedList)

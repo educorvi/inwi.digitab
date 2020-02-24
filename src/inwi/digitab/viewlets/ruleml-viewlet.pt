@@ -9,6 +9,7 @@
 
   <h2>Maschinenlesbare Verarbeitungsregel (RuleML)</h2>
 
+  <div class="card card-body">
   <pre>
     <code lang="xml">
       &lt;Implies&gt;
@@ -33,6 +34,7 @@
       &lt;/Implies&gt;
     </code>
   </pre>
+  </div>
 
   </div>
 </div>

@@ -32,7 +32,7 @@ class IRule(model.Schema):
                           required=False)
 
     ind3 = schema.TextLine(title=u"Ergebnis",
-                          description="Zahl oder Text",
+                          description=u"Zahl oder Text",
                           required=False)
 
     link = schema.Choice(title=u"Verknüpfung",
