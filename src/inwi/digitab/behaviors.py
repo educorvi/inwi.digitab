@@ -7,8 +7,12 @@ from zope.component import adapter
 from zope.interface import implementer
 from zope.interface import provider
 from zope.interface import Invalid
-from collective.z3cform.datagridfield import DataGridFieldFactory
-from collective.z3cform.datagridfield import DictRow
+try:
+    from collective.z3cform.datagridfield import DataGridFieldFactory
+    from collective.z3cform.datagridfield import DictRow
+except:
+    from collective.z3cform.datagridfield.datagridfield import DataGridFieldFactory
+    from collective.z3cform.datagridfield.row import DictRow    
 from inwi.digitab.vocabularies import possibleParams, getOperanden, getComparer, possibleActions, possibleLinks, possibleCustomer
 from inwi.digitab.vocab_dale import dale, dokumentarten
 
